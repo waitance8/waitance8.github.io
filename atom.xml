@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-12-02T02:21:42.911Z</updated>
+  <updated>2018-12-02T08:00:38.678Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,24 +21,16 @@
     <link href="http://yoursite.com/2018/11/28/mysql/"/>
     <id>http://yoursite.com/2018/11/28/mysql/</id>
     <published>2018-11-28T12:06:35.000Z</published>
-    <updated>2018-12-02T02:21:42.911Z</updated>
+    <updated>2018-12-02T08:00:38.678Z</updated>
     
-    <content type="html"><![CDATA[<ul><li><p>Ctrl+L            清屏</p></li><li><p>ctrl+q            打开查询窗口  </p></li></ul><ul><li><p>ctrl+/            注释sql语句  </p></li><li><p>ctrl+shift +/     解除注释  </p></li></ul><ul><li>ctrl+r            运行查询窗口的sql语句  </li></ul><ul><li>ctrl+shift+r      只运行选中的sql语句  </li></ul><ul><li>F6                打开一个mysql命令行窗口    </li></ul><ul><li>ctrl+n            打开一个新的查询窗口  </li></ul><ul><li>ctrl+w            关闭一个查询窗口  </li></ul><ul><li>ctrl+tab          多窗口切换 </li></ul><ul><li>退出MySQL：quit或exit</li></ul>]]></content>
+    <content type="html"><![CDATA[<ul><li><p>Ctrl+L            清屏</p></li><li><p>ctrl+q            打开查询窗口  </p><a id="more"></a></li><li><p>ctrl+/            注释sql语句  </p></li><li><p>ctrl+shift +/     解除注释  </p></li></ul><ul><li>ctrl+r            运行查询窗口的sql语句  </li></ul><ul><li>ctrl+shift+r      只运行选中的sql语句  </li></ul><ul><li>F6                打开一个mysql命令行窗口    </li></ul><ul><li>ctrl+n            打开一个新的查询窗口  </li></ul><ul><li>ctrl+w            关闭一个查询窗口  </li></ul><ul><li>ctrl+tab          多窗口切换 </li></ul><ul><li>退出MySQL：quit或exit</li></ul>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;ul&gt;
+      &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Ctrl+L            清屏&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;ctrl+q            打开查询窗口  &lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;ctrl+/            注释sql语句  &lt;/p&gt;
-&lt;/l
-      
     
     </summary>
     
