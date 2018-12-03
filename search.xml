@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[GitHub搭建个人博客]]></title>
+    <url>%2F2018%2F12%2F02%2FGitHub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%2F</url>
+    <content type="text"><![CDATA[一.到github官网注册账号（这一步很简单，不再详细说） 注册完成后，创建repository(右上角) 仓库名就是你的用户名 二.创建本地仓库。 在本地任选磁盘创建文件夹 到Git官网下载Git 打开自己创建的文件夹，右击空白处，点击 Git GUI Here。 会弹出以下窗口 选择Create New Repository-&gt;browse-&gt; 选择文件夹。 之后，点击help,选择Show SSH key,点击Generate Key来生成key。 把生成的key填写到Github中 回到github,右上角Settings-&gt;SSH and GPG keys,点击New SSH key,title随便写,主要是用来注明的 三.配置用户 在自己创建的文件夹中，右击选择git bash here。 输入： git config –global user.name“你的用户名” git config –global user.email“你的邮箱地址” git clone + 你的github的网址 /先把你的仓库地址克隆到本地/ 四. 打开一个记事本 输入以下代码： &lt;!DOCTYPE html&gt; &lt;html lang=&quot;en&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;title&gt;Document&lt;/title&gt; &lt;style type=&quot;text/css&quot;&gt; h1{text-align: center;font-size: 50px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt; &lt;h1&gt;Hello Github&lt;/h1&gt; &lt;/body&gt; &lt;/html&gt; 输入完毕后，将该文件后缀名改为html。 五.提交代码 在git bash here 窗口中输入以下代码 git init /初始化/ git add . /add 与. 之间有空格 / git commit -m “提交文件的信息” git remote add origin 你的远程仓库地址 git push -u remote origin master 提交完成 刷新GitHub页面即可看到 六.配置github pages 在自己仓库那里找到Settings，配置GitHub pages如下图： 通过Github Pages生成的地址就可以访问自己的网页啦 这样，简单的GitHub教程就算完成了后期可以增加模板让自己的GitHub更美观]]></content>
+      <categories>
+        <category>github</category>
+      </categories>
+      <tags>
+        <tag>github</tag>
+        <tag>个人博客</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[MySQL快捷键]]></title>
     <url>%2F2018%2F11%2F28%2Fmysql%2F</url>
     <content type="text"><![CDATA[Ctrl+L 清屏 ctrl+q 打开查询窗口 ctrl+/ 注释sql语句 ctrl+shift +/ 解除注释 ctrl+r 运行查询窗口的sql语句 ctrl+shift+r 只运行选中的sql语句 F6 打开一个mysql命令行窗口 ctrl+n 打开一个新的查询窗口 ctrl+w 关闭一个查询窗口 ctrl+tab 多窗口切换 退出MySQL：quit或exit]]></content>
