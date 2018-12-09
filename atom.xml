@@ -87,9 +87,9 @@
       <category term="测试" scheme="http://yoursite.com/categories/%E6%B5%8B%E8%AF%95/"/>
     
     
-      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
-    
       <category term="github" scheme="http://yoursite.com/tags/github/"/>
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
     
       <category term="npm" scheme="http://yoursite.com/tags/npm/"/>
     
