@@ -447,8 +447,7 @@
 
       
         
-          
-            <p>如果从网上直接搜mysql安装，相信大部分人搜到的都是这三句命令</p>
+          <p>如果从网上直接搜mysql安装，相信大部分人搜到的都是这三句命令</p>
 <blockquote>
 <p>sudo apt-get install mysql-server</p>
 <p>sudo apt-get install mysql-client</p>
@@ -456,29 +455,14 @@
 </blockquote>
 <p>默认安装mysql5.7 但这种安装方式可能会在某次登录时出现这种错误：</p>
 <blockquote>
-<p><strong>ERROR 1045 (28000): Access denied for user ‘root‘@’localhost’ (using password）</strong></p>
-</blockquote>
-<p>阅读了一下MySQL安装指南，发现MySQL5.7版本最高只适配到Ubuntu17.04，而MySQL8.0最高适配到Ubuntu18.04。<br>所以，到<a href="https://dev.mysql.com/downloads/repo/apt/" target="_blank" rel="noopener">mysql官网</a>下载一个mysql-apt-config_0.*.<em>**</em>_all.deb安装,选择mysql8.0。</p>
-<p><img src="/2018/12/09/mysql8-0安装教程/008.jpg" alt=""></p>
-<p>然后apt update一下</p>
-<p><img src="/2018/12/09/mysql8-0安装教程/001.jpg" alt=""></p>
-<p>使用sudo apt install mysql-server命令，就会安装MySQL8.0</p>
-<p><img src="/2018/12/09/mysql8-0安装教程/002.jpg" alt=""></p>
-<p>按此方法会在安装过程中出现如下界面要求用户输入MySQL密码</p>
-<p><img src="/2018/12/09/mysql8-0安装教程/003.jpg" alt=""></p>
-<p>MySQL8.0采用了新的加密方式，一定要注意，正是因为这个加密方式才导致Ubuntu18.04用设置的root密码登录不了MySQL，因为Ubuntu18.04的终端可能有问题，并不支持这个新的加密方式。幸好有界面可以让我们选择使用旧版本5.x的加密方式，所以果断选择采用5.x的加密方式。</p>
-<p><img src="/2018/12/09/mysql8-0安装教程/004.jpg" alt=""></p>
-<p>最后在终端输入mysql -u root -p命令并输入密码检查安装成功而且可以看到MySQL版本号为8.0。</p>
-<p><img src="/2018/12/09/mysql8-0安装教程/005.jpg" alt=""></p>
-<p>#一些小问题#<br>一、虚拟机网络未设置好导致联不上网</p>
-<p> <strong>无线上网</strong></p>
-<p>1、完全关闭Ubuntu</p>
-<p>2、点开菜单栏“虚拟机”-&gt;”设置”-&gt;”网络适配器”<br>设置为桥接模式<br><img src="/2018/12/09/mysql8-0安装教程/007.jpg" alt=""><br><strong>有线上网</strong><br><img src="/2018/12/09/mysql8-0安装教程/" alt=""><br>方法同上，只是把网络连接改成了<strong>NAT模式</strong></p>
-<hr>
-<p>说明：本人才接触没多久  也是看到其他大佬的帖子后才知道的</p>
-<p>   附加大佬的连接：<a href="https://blog.csdn.net/iversonx/article/details/80341596" target="_blank" rel="noopener">https://blog.csdn.net/iversonx/article/details/80341596</a>  </p>
-
-          
+<p><strong>ERROR 1045 (28000): Access denied for user ‘root‘@’localhost’ (using password）</strong><br></p></blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/12/09/mysql8-0安装教程/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
