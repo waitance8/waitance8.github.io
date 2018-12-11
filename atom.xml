@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-12-11T08:51:50.901Z</updated>
+  <updated>2018-12-11T09:17:22.205Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2018/12/09/mysql8-0%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/"/>
     <id>http://yoursite.com/2018/12/09/mysql8-0安装教程/</id>
     <published>2018-12-09T13:45:09.000Z</published>
-    <updated>2018-12-11T08:51:50.901Z</updated>
+    <updated>2018-12-11T09:17:22.205Z</updated>
     
     <content type="html"><![CDATA[<p>如果从网上直接搜mysql安装，相信大部分人搜到的都是这三句命令</p><blockquote><p>sudo apt-get install mysql-server</p><p>sudo apt-get install mysql-client</p><p>sudo netstat -tap | grep mysql </p></blockquote><p>默认安装mysql5.7 但这种安装方式可能会在某次登录时出现这种错误：</p><blockquote><p><strong>ERROR 1045 (28000): Access denied for user ‘root‘@’localhost’ (using password）</strong><br><a id="more"></a></p></blockquote><p>阅读了一下MySQL安装指南，发现MySQL5.7版本最高只适配到Ubuntu17.04，而MySQL8.0最高适配到Ubuntu18.04。<br>所以，到<a href="https://dev.mysql.com/downloads/repo/apt/" target="_blank" rel="noopener">mysql官网</a>下载一个mysql-apt-config_0.*.<em>**</em>_all.deb安装,选择mysql8.0。</p><p><img src="/2018/12/09/mysql8-0安装教程/008.jpg" alt=""></p><p>然后apt update一下</p><p><img src="/2018/12/09/mysql8-0安装教程/001.jpg" alt=""></p><p>使用sudo apt install mysql-server命令，就会安装MySQL8.0</p><p><img src="/2018/12/09/mysql8-0安装教程/002.jpg" alt=""></p><p>按此方法会在安装过程中出现如下界面要求用户输入MySQL密码</p><p><img src="/2018/12/09/mysql8-0安装教程/003.jpg" alt=""></p><p>MySQL8.0采用了新的加密方式，一定要注意，正是因为这个加密方式才导致Ubuntu18.04用设置的root密码登录不了MySQL，因为Ubuntu18.04的终端可能有问题，并不支持这个新的加密方式。幸好有界面可以让我们选择使用旧版本5.x的加密方式，所以果断选择采用5.x的加密方式。</p><p><img src="/2018/12/09/mysql8-0安装教程/004.jpg" alt=""></p><p>最后在终端输入mysql -u root -p命令并输入密码检查安装成功而且可以看到MySQL版本号为8.0。</p><p><img src="/2018/12/09/mysql8-0安装教程/005.jpg" alt=""></p><p>#一些小问题#<br>一、虚拟机网络未设置好导致联不上网</p><p> <strong>无线上网</strong></p><p>1、完全关闭Ubuntu</p><p>2、点开菜单栏“虚拟机”-&gt;”设置”-&gt;”网络适配器”<br>设置为桥接模式<br><img src="/2018/12/09/mysql8-0安装教程/007.jpg" alt=""><br><strong>有线上网</strong><br><img src="/2018/12/09/mysql8-0安装教程/" alt=""><br>方法同上，只是把网络连接改成了<strong>NAT模式</strong></p><hr><p>说明：本人才接触没多久  也是看到其他大佬的帖子后才知道的</p><p>   附加大佬的连接：<a href="https://blog.csdn.net/iversonx/article/details/80341596" target="_blank" rel="noopener">https://blog.csdn.net/iversonx/article/details/80341596</a>  </p>]]></content>
     
@@ -53,7 +53,7 @@
     <link href="http://yoursite.com/2018/12/02/GitHub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
     <id>http://yoursite.com/2018/12/02/GitHub搭建个人博客/</id>
     <published>2018-12-02T13:28:07.000Z</published>
-    <updated>2018-12-03T13:32:21.190Z</updated>
+    <updated>2018-12-11T09:17:19.004Z</updated>
     
     <content type="html"><![CDATA[<p>一.到<a href="https://github.com/" target="_blank" rel="noopener">github官网</a>注册账号（这一步很简单，不再详细说）<br><a id="more"></a></p><ul><li><p><strong>注册完成后，创建repository(右上角)</strong><br><img src="/2018/12/02/GitHub搭建个人博客/图片1.png" alt=""></p></li><li><p><strong>仓库名就是你的用户名</strong><br><img src="/2018/12/02/GitHub搭建个人博客/图片2.png" alt=""></p></li></ul><p>二.创建本地仓库。</p><ul><li><p>在本地任选磁盘创建文件夹</p></li><li><p>到<a href="https://git-scm.com/" target="_blank" rel="noopener">Git官网</a>下载Git</p></li><li><p>打开自己创建的文件夹，右击空白处，点击 Git GUI Here。</p></li></ul><p>　　会弹出以下窗口</p><p><img src="/2018/12/02/GitHub搭建个人博客/图片3.png" alt=""></p><p>　　选择Create New Repository-&gt;browse-&gt; 选择文件夹。</p><p>　　之后，点击help,选择Show SSH key,点击Generate Key来生成key。</p><p><img src="/2018/12/02/GitHub搭建个人博客/图片4.png" alt=""></p><ul><li>把生成的key填写到Github中</li></ul><p>　　回到github,右上角Settings-&gt;SSH and GPG keys,点击New SSH key,title随便写,主要是用来注明的</p><p><img src="/2018/12/02/GitHub搭建个人博客/图片5.png" alt=""></p><p>三.配置用户</p><p>　　在自己创建的文件夹中，右击选择git bash here。</p><p>　　输入：</p><blockquote><p>git config –global user.name“你的用户名”</p></blockquote><blockquote><p>git config –global user.email“你的邮箱地址”</p></blockquote><blockquote><p>git clone + 你的github的网址  /<strong>先把你的仓库地址克隆到本地</strong>/</p></blockquote><p>四.</p><p>　　打开一个记事本<br>　　输入以下代码：</p><p><code>&lt;!DOCTYPE html&gt;</code></p><p><code>&lt;html lang=&quot;en&quot;&gt;</code></p><p><code>&lt;head&gt;</code></p><p><code>&lt;meta charset=&quot;UTF-8&quot;&gt;</code></p><p><code>&lt;title&gt;Document&lt;/title&gt;</code></p><p><code>&lt;style type=&quot;text/css&quot;&gt;</code></p><p><code>h1{</code><br><code>text-align: center;</code><br><code>font-size: 50px;</code><br><code>}</code></p><p><code>&lt;/style&gt;</code></p><p><code>&lt;/head&gt;</code></p><p><code>&lt;body&gt;</code></p><p><code>&lt;h1&gt;Hello Github&lt;/h1&gt;</code> </p><p><code>&lt;/body&gt;</code></p><p><code>&lt;/html&gt;</code> </p><p>　　输入完毕后，将该文件后缀名改为html。</p><p>五.提交代码</p><ul><li>在git bash here 窗口中输入以下代码<blockquote><p>git init      /初始化/</p><p>git add .       /add 与. 之间有空格 /  </p><p>git commit -m “提交文件的信息”</p><p>git remote add origin 你的远程仓库地址</p></blockquote></li></ul><blockquote><p>git push -u remote origin master</p></blockquote><ul><li>提交完成 刷新GitHub页面即可看到</li></ul><p>六.配置github pages</p><p>　在自己仓库那里找到Settings，配置GitHub pages如下图：<br><img src="/2018/12/02/GitHub搭建个人博客/图片6.png" alt=""></p><p>通过Github Pages生成的地址就可以访问自己的网页啦</p><hr><p>这样，简单的GitHub教程就算完成了<br>后期可以增加模板让自己的GitHub更美观</p>]]></content>
     
@@ -77,7 +77,7 @@
     <link href="http://yoursite.com/2018/11/28/mysql/"/>
     <id>http://yoursite.com/2018/11/28/mysql/</id>
     <published>2018-11-28T12:06:35.000Z</published>
-    <updated>2018-12-02T08:00:38.678Z</updated>
+    <updated>2018-12-11T09:17:17.077Z</updated>
     
     <content type="html"><![CDATA[<ul><li><p>Ctrl+L            清屏</p></li><li><p>ctrl+q            打开查询窗口  </p><a id="more"></a></li><li><p>ctrl+/            注释sql语句  </p></li><li><p>ctrl+shift +/     解除注释  </p></li></ul><ul><li>ctrl+r            运行查询窗口的sql语句  </li></ul><ul><li>ctrl+shift+r      只运行选中的sql语句  </li></ul><ul><li>F6                打开一个mysql命令行窗口    </li></ul><ul><li>ctrl+n            打开一个新的查询窗口  </li></ul><ul><li>ctrl+w            关闭一个查询窗口  </li></ul><ul><li>ctrl+tab          多窗口切换 </li></ul><ul><li>退出MySQL：quit或exit</li></ul>]]></content>
     
@@ -94,59 +94,6 @@
     
     
       <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>你好,hexo</title>
-    <link href="http://yoursite.com/2018/11/25/%E4%BD%A0%E5%A5%BD-hexo/"/>
-    <id>http://yoursite.com/2018/11/25/你好-hexo/</id>
-    <published>2018-11-25T09:01:37.000Z</published>
-    <updated>2018-12-02T02:21:40.221Z</updated>
-    
-    <content type="html"><![CDATA[<p>初次使用hexo。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;初次使用hexo。&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-      <category term="测试" scheme="http://yoursite.com/categories/%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
-    
-      <category term="github" scheme="http://yoursite.com/tags/github/"/>
-    
-      <category term="npm" scheme="http://yoursite.com/tags/npm/"/>
-    
-      <category term="基础" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2018/11/25/hello-world/"/>
-    <id>http://yoursite.com/2018/11/25/hello-world/</id>
-    <published>2018-11-25T08:29:49.772Z</published>
-    <updated>2018-11-25T08:29:49.773Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
-    
-    </summary>
-    
     
   </entry>
   
