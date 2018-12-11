@@ -324,6 +324,211 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/09/mysql8-0安装教程/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="waitance8">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Waitance8's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/09/mysql8-0安装教程/" itemprop="url">mysql8.0安装教程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-09T21:45:09+08:00">
+                2018-12-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/mysql/" itemprop="url" rel="index">
+                    <span itemprop="name">mysql</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  439
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>如果从网上直接搜mysql安装，相信大部分人搜到的都是这三句命令</p>
+<blockquote>
+<p>sudo apt-get install mysql-server</p>
+<p>sudo apt-get install mysql-client</p>
+<p>sudo netstat -tap | grep mysql </p>
+</blockquote>
+<p>默认安装mysql5.7 但这种安装方式可能会在某次登录时出现这种错误：</p>
+<blockquote>
+<p><strong>ERROR 1045 (28000): Access denied for user ‘root‘@’localhost’ (using password）</strong></p>
+</blockquote>
+<p>阅读了一下MySQL安装指南，发现MySQL5.7版本最高只适配到Ubuntu17.04，而MySQL8.0最高适配到Ubuntu18.04。<br>所以，到<a href="https://dev.mysql.com/downloads/repo/apt/" target="_blank" rel="noopener">mysql官网</a>下载一个mysql-apt-config_0.*.<em>**</em>_all.deb安装,选择mysql8.0。</p>
+<p><img src="/2018/12/09/mysql8-0安装教程/008.jpg" alt=""></p>
+<p>然后apt update一下</p>
+<p><img src="/2018/12/09/mysql8-0安装教程/001.jpg" alt=""></p>
+<p>使用sudo apt install mysql-server命令，就会安装MySQL8.0</p>
+<p><img src="/2018/12/09/mysql8-0安装教程/002.jpg" alt=""></p>
+<p>按此方法会在安装过程中出现如下界面要求用户输入MySQL密码</p>
+<p><img src="/2018/12/09/mysql8-0安装教程/003.jpg" alt=""></p>
+<p>MySQL8.0采用了新的加密方式，一定要注意，正是因为这个加密方式才导致Ubuntu18.04用设置的root密码登录不了MySQL，因为Ubuntu18.04的终端可能有问题，并不支持这个新的加密方式。幸好有界面可以让我们选择使用旧版本5.x的加密方式，所以果断选择采用5.x的加密方式。</p>
+<p><img src="/2018/12/09/mysql8-0安装教程/004.jpg" alt=""></p>
+<p>最后在终端输入mysql -u root -p命令并输入密码检查安装成功而且可以看到MySQL版本号为8.0。</p>
+<p><img src="/2018/12/09/mysql8-0安装教程/005.jpg" alt=""></p>
+<p>#一些小问题#<br>一、虚拟机网络未设置好导致联不上网</p>
+<p> <strong>无线上网</strong></p>
+<p>1、完全关闭Ubuntu</p>
+<p>2、点开菜单栏“虚拟机”-&gt;”设置”-&gt;”网络适配器”<br>设置为桥接模式<br><img src="/2018/12/09/mysql8-0安装教程/007.jpg" alt=""><br><strong>有线上网</strong><br><img src="/2018/12/09/mysql8-0安装教程/" alt=""><br>方法同上，只是把网络连接改成了<strong>NAT模式</strong></p>
+<hr>
+<p>说明：本人才接触没多久  也是看到其他大佬的帖子后才知道的</p>
+<p>   附加大佬的连接：<a href="https://blog.csdn.net/iversonx/article/details/80341596" target="_blank" rel="noopener">https://blog.csdn.net/iversonx/article/details/80341596</a>  </p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+       
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/02/GitHub搭建个人博客/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1064,7 +1269,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1075,7 +1280,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1086,7 +1291,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1166,7 +1371,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">637</span>
+    <span title="Site words total count">1.1k</span>
   
 </div>
 
@@ -1206,7 +1411,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共637字</span>
+  <span class="post-count">博客全站共1.1k字</span>
 </div>
 
         

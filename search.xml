@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[mysql8.0安装教程]]></title>
+    <url>%2F2018%2F12%2F09%2Fmysql8-0%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B%2F</url>
+    <content type="text"><![CDATA[如果从网上直接搜mysql安装，相信大部分人搜到的都是这三句命令 sudo apt-get install mysql-server sudo apt-get install mysql-client sudo netstat -tap | grep mysql 默认安装mysql5.7 但这种安装方式可能会在某次登录时出现这种错误： ERROR 1045 (28000): Access denied for user ‘root‘@’localhost’ (using password） 阅读了一下MySQL安装指南，发现MySQL5.7版本最高只适配到Ubuntu17.04，而MySQL8.0最高适配到Ubuntu18.04。所以，到mysql官网下载一个mysql-apt-config_0.*.**_all.deb安装,选择mysql8.0。 然后apt update一下 使用sudo apt install mysql-server命令，就会安装MySQL8.0 按此方法会在安装过程中出现如下界面要求用户输入MySQL密码 MySQL8.0采用了新的加密方式，一定要注意，正是因为这个加密方式才导致Ubuntu18.04用设置的root密码登录不了MySQL，因为Ubuntu18.04的终端可能有问题，并不支持这个新的加密方式。幸好有界面可以让我们选择使用旧版本5.x的加密方式，所以果断选择采用5.x的加密方式。 最后在终端输入mysql -u root -p命令并输入密码检查安装成功而且可以看到MySQL版本号为8.0。 #一些小问题#一、虚拟机网络未设置好导致联不上网 无线上网 1、完全关闭Ubuntu 2、点开菜单栏“虚拟机”-&gt;”设置”-&gt;”网络适配器”设置为桥接模式有线上网方法同上，只是把网络连接改成了NAT模式 说明：本人才接触没多久 也是看到其他大佬的帖子后才知道的 附加大佬的连接：https://blog.csdn.net/iversonx/article/details/80341596]]></content>
+      <categories>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[GitHub搭建个人博客]]></title>
     <url>%2F2018%2F12%2F02%2FGitHub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%2F</url>
     <content type="text"><![CDATA[一.到github官网注册账号（这一步很简单，不再详细说） 注册完成后，创建repository(右上角) 仓库名就是你的用户名 二.创建本地仓库。 在本地任选磁盘创建文件夹 到Git官网下载Git 打开自己创建的文件夹，右击空白处，点击 Git GUI Here。 会弹出以下窗口 选择Create New Repository-&gt;browse-&gt; 选择文件夹。 之后，点击help,选择Show SSH key,点击Generate Key来生成key。 把生成的key填写到Github中 回到github,右上角Settings-&gt;SSH and GPG keys,点击New SSH key,title随便写,主要是用来注明的 三.配置用户 在自己创建的文件夹中，右击选择git bash here。 输入： git config –global user.name“你的用户名” git config –global user.email“你的邮箱地址” git clone + 你的github的网址 /先把你的仓库地址克隆到本地/ 四. 打开一个记事本 输入以下代码： &lt;!DOCTYPE html&gt; &lt;html lang=&quot;en&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;title&gt;Document&lt;/title&gt; &lt;style type=&quot;text/css&quot;&gt; h1{text-align: center;font-size: 50px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt; &lt;h1&gt;Hello Github&lt;/h1&gt; &lt;/body&gt; &lt;/html&gt; 输入完毕后，将该文件后缀名改为html。 五.提交代码 在git bash here 窗口中输入以下代码 git init /初始化/ git add . /add 与. 之间有空格 / git commit -m “提交文件的信息” git remote add origin 你的远程仓库地址 git push -u remote origin master 提交完成 刷新GitHub页面即可看到 六.配置github pages 在自己仓库那里找到Settings，配置GitHub pages如下图： 通过Github Pages生成的地址就可以访问自己的网页啦 这样，简单的GitHub教程就算完成了后期可以增加模板让自己的GitHub更美观]]></content>
@@ -31,8 +43,8 @@
         <category>测试</category>
       </categories>
       <tags>
-        <tag>github</tag>
         <tag>hexo</tag>
+        <tag>github</tag>
         <tag>npm</tag>
         <tag>基础</tag>
       </tags>
